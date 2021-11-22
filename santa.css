@@ -3,10 +3,12 @@
     --santagreen: #38686A;
     --bgcolor: #A6D49F;
     --fontcolor: #323031;
+    --contentbgcolor: white;
 }
 
 * {
     font-family: 'Raleway', sans-serif; 
+    font-style: var(--fontcolor);
     background-color: var(--bgcolor);
 }
 
@@ -17,9 +19,17 @@
 }
 
 #nameEnter {
-    background-color: white;
+    background-color: var(--contentbgcolor);
+    border: 1px solid black;
 }
 
-#nameSubmit {
-    background-color: white;
+button {
+    background-color: var(--contentbgcolor);
+    font-family: monospace;
+    border: 1px solid black;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #BFDBF7;
 }

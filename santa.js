@@ -1,13 +1,12 @@
 var nameInput = document.getElementById('nameEnter');
-var nameButton = document.getElementById('nameSubmit');
+var nameAdd = document.getElementById('nameAdd');
+var nameSubmit = document.getElementById('nameSubmit');
 var nameList = document.getElementById('namesList');
 
 var inputText = nameInput;
 
-
-
 var nameArray = [];
 
-nameButton.addEventListener('click', function() {
+nameSubmit.addEventListener('click', function() {
     console.log('hello' + `${inputText}`);
 })
