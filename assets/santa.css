@@ -13,15 +13,53 @@
     background-color: var(--bgcolor);
 }
 
-h1 {
-    color: var(--santared);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .mainContentBox {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+}
+
+.leftDiv {
+    float: left;
+    display: flex;
+    /* left: 0px;
+    z-index: -1; */
+}
+
+.midContent {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.rightDiv {
+    float: right;
+    /* right: 0px;
+    z-index: -1; */
+}
+
+.lights {
+    width: 100%;
+    height: 100%;
+}
+
+#lights180 {
+    transform: scaleX(-1);
+}
+
+h1 {
+    color: var(--santared);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
 }
 
 #nameEnter {
