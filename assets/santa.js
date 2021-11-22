@@ -5,6 +5,7 @@ var nameList = document.getElementById('namesList');
 var pRemove = document.getElementById('pRemove');
 var scrambleDiv = document.getElementById('scrambleDiv');
 var scrambleDivTitle = document.getElementById('scrambleDivTitle');
+var importantDiv = document.getElementById('importantName');
 
 var nameArray = [];
 var scramblArray = [];
@@ -65,12 +66,30 @@ nameSubmit.addEventListener('click', function () {
         scrambleDiv.appendChild(creBtn);
 
         creBtn.addEventListener('click', function () {
-            console.log(nameArray);
             const itemArr = nameArray.indexOf(creInp.value);
             if (itemArr > -1) {
-                scramblArray.push(itemArr)
+                var pushTo = itemArr.toString();
+                console.log(pushTo)
+                console.log(scramblArray);
+                scramblArray.push(pushTo);
+                console.log(scramblArray);
+                console.log(nameArray);
                 nameArray.splice(itemArr, 1);
-                
+                console.log(nameArray);
+                const randomElement = nameArray[Math.floor(Math.random() * nameArray.length)];
+                var secretName = document.createElement('h2');
+                secretName.textContent = randomElement;
+                importantDiv.appendChild(secretName);
+                console.log(nameArray);
+                var randomToString = randomElement.toString();
+                nameArray.splice(randomElement);
+                console.log(nameArray);
+                nameArray.push(scramblArray[0]);
+                console.log(nameArray);
+                console.log(scramblArray);
+                scramblArray.splice(0);
+                console.log(scramblArray);
+                creInp.value = '';
             } else {
                 console.log('fucko-boingo');
             }
