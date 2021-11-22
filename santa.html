@@ -9,28 +9,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="santa.css">
+    <link rel="stylesheet" href="assets/santa.css">
 </head>
 
 <body>
     <div class="mainContentBox">
-        <div class="title">
+        <div class="titleDiv">
             <h1>Secret Santa Generator</h1>
+            <!-- <label for="name">Names Here</label> -->
         </div>
-        <div class="inputBtn">
+        <div class="inputSection">
             <!-- <form> -->
-            <input id="nameEnter"></input>
+            <input type="text" id="nameEnter" placeholder="firstname lastname">
             <button id="nameAdd">Add Name</button>
             <!-- </form> -->
         </div>
         <div class="namesListdiv">
-            <ul id="namesList">
-                
+            <ul>
+                <div id="namesList">
+
+                </div>
             </ul>
             <button id="nameSubmit">Finalize Names</button>
         </div>
     </div>
-    <script src="santa.js"></script>
+    <script src="assets/santa.js"></script>
 </body>
 
 </html>
