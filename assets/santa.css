@@ -25,6 +25,12 @@ body {
     align-items: center;
 }
 
+#scrambleDivTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .misnomer {
     margin: 0px
 }

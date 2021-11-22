@@ -2,7 +2,9 @@ var nameEnter = document.getElementById("nameEnter");
 var nameAdd = document.getElementById('nameAdd');
 var nameSubmit = document.getElementById('nameSubmit');
 var nameList = document.getElementById('namesList');
+var pRemove = document.getElementById('pRemove');
 var scrambleDiv = document.getElementById('scrambleDiv');
+var scrambleDivTitle = document.getElementById('scrambleDivTitle');
 
 var nameArray = [];
 var scramblArray = [];
@@ -11,8 +13,8 @@ function capitalizeFirstLetter(string) {
     var sepWord = string.toLowerCase().split(' ');
     for (var i = 0; i < sepWord.length; i++) {
         sepWord[i] = sepWord[i].charAt(0).toUpperCase() + sepWord[i].substring(1);
-     }
-     return sepWord.join(' ');
+    }
+    return sepWord.join(' ');
     // return string[0].toUpperCase() + string.slice(1);
 }
 
@@ -27,7 +29,6 @@ nameAdd.addEventListener('click', function (event) {
         var newName = document.createElement('li');
         newName.textContent = inputFixed;
         nameList.appendChild(newName);
-        console.log(nameArray)
         nameEnter.value = '';
     }
 })
@@ -42,26 +43,37 @@ nameSubmit.addEventListener('click', function () {
     //name entry field to check with already prexisting names
     //if name in field = name left in array, remove name temporarily
     //if no names left, but still ... tenative
-    nameEnter.style.display = 'none';
-    nameAdd.style.display = 'none';
-    nameSubmit.style.display = 'none';
-    nameList.innerHTML = '';
+    if (nameArray.length == 0 || nameArray.length == 1) {
+        return
+    } else {
+        pRemove.style.display = 'none';
+        nameEnter.style.display = 'none';
+        nameAdd.style.display = 'none';
+        nameSubmit.style.display = 'none';
+        nameList.innerHTML = '';
 
-    var creInp = document.createElement('input');
-    var creBtn = document.createElement('button');
-    var creP = document.createElement('p');
+        var creInp = document.createElement('input');
+        var creBtn = document.createElement('button');
+        var creP = document.createElement('p');
 
-    creInp.classList.add('createdNameEnter');
-    // creBtn.classList.add('createdBtn')
-    creBtn.textContent = "Next"
-    creP.textContent = "Put in your First Name, then the First initial of your Last Name."
-    creBtn.addEventListener('click', function () {
-        for (let i = 0; i < nameArray.length; i++) {
-            const currentPos = nameArray[i];
+        creInp.classList.add('createdNameEnter');
+        creBtn.textContent = "Next"
+        creP.textContent = "Now, put in !YOUR! First Name, then the First initial of !YOUR! Last Name."
 
-        }
-    })
-    scrambleDiv.appendChild()
-    scrambleDiv.appendChild(creInp);
-    scrambleDiv.appendChild(creBtn);
+        scrambleDivTitle.appendChild(creP);
+        scrambleDiv.appendChild(creInp);
+        scrambleDiv.appendChild(creBtn);
+
+        creBtn.addEventListener('click', function () {
+            console.log(nameArray);
+            const itemArr = nameArray.indexOf(creInp.value);
+            if (itemArr > -1) {
+                scramblArray.push(itemArr)
+                nameArray.splice(itemArr, 1);
+                
+            } else {
+                console.log('fucko-boingo');
+            }
+        })
+    }
 })
