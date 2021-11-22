@@ -7,15 +7,25 @@ var scrambleDiv = document.getElementById('scrambleDiv');
 var nameArray = [];
 var scramblArray = [];
 
+function capitalizeFirstLetter(string) {
+    var sepWord = string.toLowerCase().split(' ');
+    for (var i = 0; i < sepWord.length; i++) {
+        sepWord[i] = sepWord[i].charAt(0).toUpperCase() + sepWord[i].substring(1);
+     }
+     return sepWord.join(' ');
+    // return string[0].toUpperCase() + string.slice(1);
+}
+
 nameAdd.addEventListener('click', function (event) {
     event.preventDefault();
     let inputText = nameEnter.value;
     if (inputText === '') {
         return
     } else {
-        nameArray.push(inputText);
+        var inputFixed = capitalizeFirstLetter(inputText);
+        nameArray.push(inputFixed);
         var newName = document.createElement('li');
-        newName.textContent = inputText;
+        newName.textContent = inputFixed;
         nameList.appendChild(newName);
         console.log(nameArray)
         nameEnter.value = '';
@@ -36,19 +46,22 @@ nameSubmit.addEventListener('click', function () {
     nameAdd.style.display = 'none';
     nameSubmit.style.display = 'none';
     nameList.innerHTML = '';
-    
+
     var creInp = document.createElement('input');
     var creBtn = document.createElement('button');
+    var creP = document.createElement('p');
 
-    creBtn.classList.add('createdNameEnter')
-    // creInp.classList.add('')
+    creInp.classList.add('createdNameEnter');
+    // creBtn.classList.add('createdBtn')
     creBtn.textContent = "Next"
-    creBtn.addEventListener('click', function() {
+    creP.textContent = "Put in your First Name, then the First initial of your Last Name."
+    creBtn.addEventListener('click', function () {
         for (let i = 0; i < nameArray.length; i++) {
             const currentPos = nameArray[i];
-            
+
         }
     })
+    scrambleDiv.appendChild()
     scrambleDiv.appendChild(creInp);
     scrambleDiv.appendChild(creBtn);
 })

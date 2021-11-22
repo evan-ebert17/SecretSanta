@@ -19,6 +19,16 @@ body {
     overflow: hidden;
 }
 
+.titleDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.misnomer {
+    margin: 0px
+}
+
 .mainContentBox {
     display: flex;
     flex-direction: row;
@@ -60,6 +70,11 @@ h1 {
     color: var(--santared);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: center;
+    margin-bottom: 0px;
+}
+
+p {
+    margin-top: 0px;
 }
 
 #nameEnter {
@@ -67,9 +82,19 @@ h1 {
     border: 1px solid black;
 }
 
+#scrambleDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .createdNameEnter {
     background-color: var(--contentbgcolor);
     border: 1px solid black;
+    margin: 5px;
 }
 
 .namesListdiv {
@@ -85,7 +110,9 @@ h1 {
 li{
     align-items: center;
     margin: 7px;
+    text-transform: capitalize;
 }
+
 
 button {
     background-color: var(--contentbgcolor);
