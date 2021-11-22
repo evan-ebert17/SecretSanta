@@ -1,0 +1,25 @@
+:root {
+    --santared: #DB3A34;
+    --santagreen: #38686A;
+    --bgcolor: #A6D49F;
+    --fontcolor: #323031;
+}
+
+* {
+    font-family: 'Raleway', sans-serif; 
+    background-color: var(--bgcolor);
+}
+
+.mainContentBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nameEnter {
+    background-color: white;
+}
+
+#nameSubmit {
+    background-color: white;
+}
