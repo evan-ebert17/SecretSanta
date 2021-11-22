@@ -1,15 +1,21 @@
 :root {
-    --santared: #DB3A34;
-    --santagreen: #38686A;
+    --santared: #d94934;
+    --santagreen: #7f967b;
     --bgcolor: #A6D49F;
-    --fontcolor: #323031;
+    --fontcolor: #000;
+    --goldaccent: #d6d0af;
     --contentbgcolor: white;
 }
 
 * {
     font-family: 'Raleway', sans-serif; 
-    font-style: var(--fontcolor);
+    color: var(--fontcolor);
     background-color: var(--bgcolor);
+}
+
+h1 {
+    color: var(--santared);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .mainContentBox {
@@ -21,6 +27,21 @@
 #nameEnter {
     background-color: var(--contentbgcolor);
     border: 1px solid black;
+}
+
+.namesListdiv {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+#nameSubmit {
+    margin: 5px;
+}
+
+li{
+    align-items: center;
+    margin: 7px;
 }
 
 button {
