@@ -67,6 +67,11 @@ h1 {
     border: 1px solid black;
 }
 
+.createdNameEnter {
+    background-color: var(--contentbgcolor);
+    border: 1px solid black;
+}
+
 .namesListdiv {
  display: flex;
  flex-direction: column;
