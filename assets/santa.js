@@ -69,34 +69,38 @@ nameSubmit.addEventListener('click', function () {
         creBtn.addEventListener('click', function () {
             var inputFixed2 = capitalizeFirstLetter(creInp.value);
             const itemArr = nameArray.indexOf(inputFixed2);
-            if (itemArr > -1) {
+            if (nameArray.includes(inputFixed2) && itemArr > -1) {
+                console.log('namein')
                 scramblArray.push(nameArray[itemArr]);
-                console.log(nameArray);
                 nameArray.splice(itemArr, 1);
-                console.log(nameArray);
                 const randomElement = nameArray[Math.floor(Math.random() * nameArray.length)];
                 var secretName = document.createElement('h2');
                 secretName.textContent = randomElement;
                 importantDiv.appendChild(secretName);
                 for (let i = 0; i < nameArray.length; i++) {
-                    const currentPos = nameArray[i];
                     if(nameArray.includes(secretName.textContent)){
-                        console.log('hello')
-                        console.log(nameArray);
                         var secretnamePos = nameArray.indexOf(secretName.textContent);
-                        console.log(secretnamePos);
                         nameArray.splice(secretnamePos, 1);
-                        console.log(nameArray);
                     }
                 };
-                console.log(nameArray);
                 nameArray.push(scramblArray[0]);
-                console.log(nameArray);
                 scramblArray.splice(0);
                 creInp.value = '';
             } else {
-                console.log('fucko-boingo');
+                console.log('nameout');
+                const randomElement = nameArray[Math.floor(Math.random() * nameArray.length)];
+                var secretName = document.createElement('h2');
+                secretName.textContent = randomElement;
+                importantDiv.appendChild(secretName);
+                for (let i = 0; i < nameArray.length; i++) {
+                    if(nameArray.includes(secretName.textContent)){
+                        var secretnamePos = nameArray.indexOf(secretName.textContent);
+                        nameArray.splice(secretnamePos, 1);
+                    }
+                };
+                creInp.value = '';
             }
+            
         })
     }
 })
