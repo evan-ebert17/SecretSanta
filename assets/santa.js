@@ -16,34 +16,13 @@ function capitalizeFirstLetter(string) {
         sepWord[i] = sepWord[i].charAt(0).toUpperCase() + sepWord[i].substring(1);
     }
     return sepWord.join(' ');
-    // return string[0].toUpperCase() + string.slice(1);
 }
 
-nameAdd.addEventListener('click', function (event) {
-    event.preventDefault();
-    let inputText = nameEnter.value;
-    if (inputText === '') {
-        return
-    } else {
-        var inputFixed = capitalizeFirstLetter(inputText);
-        nameArray.push(inputFixed);
-        var newName = document.createElement('li');
-        newName.textContent = inputFixed;
-        nameList.appendChild(newName);
-        nameEnter.value = '';
-    }
-})
+function hideSecret() {
+    setTimeout( function() { importantDiv.innerHTML = '' }, 5000);
+}
 
-nameSubmit.addEventListener('click', function () {
-    //after creating names, you then put yours in to prevent duplicate gets
-    //then once a name is pulled, it is removed from the hat
-    //click next, name gets put back in, but other one stays out
-    //go back to step one until there is no more names
-    //then the process ends
-
-    //name entry field to check with already prexisting names
-    //if name in field = name left in array, remove name temporarily
-    //if no names left, but still ... tenative
+function secretSanta() {
     if (nameArray.length == 0 || nameArray.length == 1) {
         return
     } else {
@@ -86,6 +65,7 @@ nameSubmit.addEventListener('click', function () {
                 nameArray.push(scramblArray[0]);
                 scramblArray.splice(0);
                 creInp.value = '';
+                hideSecret();
             } else {
                 console.log('nameout');
                 const randomElement = nameArray[Math.floor(Math.random() * nameArray.length)];
@@ -99,8 +79,28 @@ nameSubmit.addEventListener('click', function () {
                     }
                 };
                 creInp.value = '';
+                hideSecret();
             }
-            
+
         })
     }
+};
+
+nameAdd.addEventListener('click', function (event) {
+    event.preventDefault();
+    let inputText = nameEnter.value;
+    if (inputText === '') {
+        return
+    } else {
+        var inputFixed = capitalizeFirstLetter(inputText);
+        nameArray.push(inputFixed);
+        var newName = document.createElement('li');
+        newName.textContent = inputFixed;
+        nameList.appendChild(newName);
+        nameEnter.value = '';
+    }
+})
+
+nameSubmit.addEventListener('click', function () {
+    secretSanta();
 })
