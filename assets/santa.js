@@ -58,6 +58,7 @@ nameSubmit.addEventListener('click', function () {
         var creP = document.createElement('p');
 
         creInp.classList.add('createdNameEnter');
+        creInp.setAttribute('placeholder', 'Michael D (again)')
         creBtn.textContent = "Next"
         creP.textContent = "Now, put in !YOUR! First Name, then the First initial of !YOUR! Last Name."
 
@@ -66,13 +67,10 @@ nameSubmit.addEventListener('click', function () {
         scrambleDiv.appendChild(creBtn);
 
         creBtn.addEventListener('click', function () {
-            const itemArr = nameArray.indexOf(creInp.value);
+            var inputFixed2 = capitalizeFirstLetter(creInp.value);
+            const itemArr = nameArray.indexOf(inputFixed2);
             if (itemArr > -1) {
-                var pushTo = itemArr.toString();
-                console.log(pushTo)
-                console.log(scramblArray);
-                scramblArray.push(pushTo);
-                console.log(scramblArray);
+                scramblArray.push(nameArray[itemArr]);
                 console.log(nameArray);
                 nameArray.splice(itemArr, 1);
                 console.log(nameArray);
@@ -80,15 +78,21 @@ nameSubmit.addEventListener('click', function () {
                 var secretName = document.createElement('h2');
                 secretName.textContent = randomElement;
                 importantDiv.appendChild(secretName);
-                console.log(nameArray);
-                var randomToString = randomElement.toString();
-                nameArray.splice(randomElement);
+                for (let i = 0; i < nameArray.length; i++) {
+                    const currentPos = nameArray[i];
+                    if(nameArray.includes(secretName.textContent)){
+                        console.log('hello')
+                        console.log(nameArray);
+                        var secretnamePos = nameArray.indexOf(secretName.textContent);
+                        console.log(secretnamePos);
+                        nameArray.splice(secretnamePos, 1);
+                        console.log(nameArray);
+                    }
+                };
                 console.log(nameArray);
                 nameArray.push(scramblArray[0]);
                 console.log(nameArray);
-                console.log(scramblArray);
                 scramblArray.splice(0);
-                console.log(scramblArray);
                 creInp.value = '';
             } else {
                 console.log('fucko-boingo');
