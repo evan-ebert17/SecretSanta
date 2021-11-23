@@ -1,9 +1,10 @@
 # Personal Portfolio
 
 [Github](https://github.com/evan-ebert17/SecretSanta/)  
+[Deployed App](https://evan-ebert17.github.io/SecretSanta/)
 
 ## Screen Shots
-![SecretSanta App](src/assets/efd01e58721e7c0d0010962d2e3d3492.png)
+![SecretSanta App](assets/imgAssets/secretsantapng.png)
 
 ##### Table of Contents  
 [Purpose](#purpose)  
