@@ -1,4 +1,4 @@
-# Personal Portfolio
+# Secret Santa Generator
 
 [Github](https://github.com/evan-ebert17/SecretSanta/)  
 [Deployed App](https://evan-ebert17.github.io/SecretSanta/)
