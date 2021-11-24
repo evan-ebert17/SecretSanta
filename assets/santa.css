@@ -125,7 +125,6 @@ li{
     text-transform: capitalize;
 }
 
-
 button {
     background-color: var(--contentbgcolor);
     font-family: monospace;
@@ -135,4 +134,29 @@ button {
 button:hover {
     cursor: pointer;
     background-color: #BFDBF7;
+}
+
+@media all and (max-width: 608px) {
+    .inputSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #scrambleDivTitle {
+        text-align: center;
+    }
+    #nameAdd {
+        margin-top: 5px;
+    }
+
+    #pRemove {
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 978px){ 
+    #pRemove {
+        text-align: center;
+    }
 }
