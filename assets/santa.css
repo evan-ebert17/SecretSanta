@@ -38,15 +38,12 @@ body {
 .mainContentBox {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
     max-width: 100%;
 }
 
 .leftDiv {
     float: left;
-    display: flex;
-    /* left: 0px;
-    z-index: -1; */
 }
 
 .midContent {
@@ -59,13 +56,11 @@ body {
 
 .rightDiv {
     float: right;
-    /* right: 0px;
-    z-index: -1; */
+
 }
 
 .lights {
     width: 100%;
-    height: 100%;
 }
 
 #lights180 {
