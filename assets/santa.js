@@ -49,7 +49,6 @@ function secretSanta() {
             var inputFixed2 = capitalizeFirstLetter(creInp.value);
             const itemArr = nameArray.indexOf(inputFixed2);
             if (nameArray.includes(inputFixed2) && itemArr > -1) {
-                console.log('namein')
                 scramblArray.push(nameArray[itemArr]);
                 nameArray.splice(itemArr, 1);
                 const randomElement = nameArray[Math.floor(Math.random() * nameArray.length)];
@@ -67,7 +66,6 @@ function secretSanta() {
                 creInp.value = '';
                 hideSecret();
             } else {
-                console.log('nameout');
                 const randomElement = nameArray[Math.floor(Math.random() * nameArray.length)];
                 var secretName = document.createElement('h2');
                 secretName.textContent = randomElement;
@@ -81,7 +79,6 @@ function secretSanta() {
                 creInp.value = '';
                 hideSecret();
             }
-
         })
     }
 };
